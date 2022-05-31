@@ -1,0 +1,27 @@
+@use 'variable' as v;
+
+@mixin mq-pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mq-pc-l {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin container($size:1080px) {
+  width: min(90%, $size);
+  margin-inline: auto;
+}
+
+@mixin title-lv1 {
+  font: {
+    size: 2.6rem;
+    family: v.$font-family-en;
+    weight: bold;
+  }
+  letter-spacing: 0.12rem;
+}

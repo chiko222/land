@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hair Studio Land</title>
+    <meta name="description" content="東京・自由が丘の美容院です。" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon/webclipicon -->
+    <link rel="shortcut icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="webclip.png" />
+
+    <!-- ogp -->
+    <meta property="og:site_name" content="Hair Studio Land" />
+    <meta property="og:url" content="URL(絶対パス)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hair Studio Land" />
+    <meta property="og:description" content="東京・自由が丘の美容院です。" />
+    <meta property="og:image" content="URL(絶対パス)" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="東京・自由が丘の美容院です。" />
+    <meta name="twitter:image:src" content="URL(絶対パス)" />
+
+    <!-- adobe fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/okh2rxl.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f1693f3bfe.js" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header__logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/logo.png 1x, img/logo@2x.png 2x" />
+            <source media="(min-width: 768px)" srcset="img/logo_row.png 1x, img/logo_row@2x.png 2x" />
+            <img src="img/logo@2x.png" alt="hair studio Land" decoding="async" />
+          </picture>
+        </a>
+      </h1>
+      <a class="header__btnWrapper page__scroll" href="#reservation"><button class="header__btn btn btn--black"><span>WEB予約</span></button></a>
+    </header>
+
+    <div class="overlay" id="overlay">
+      <div class="hamburgerMenu" @click="open = !open" :class="{open: open}">
+        <span></span>
+        <span class="u-mt8"></span>
+        <span class="u-mt8"></span>
+      </div>
+      <gnav>
+        <nav class="gnav" :class="{show: open}">
+          <ul class="gnav__list">
+              <li class="gnav__item" :class="[index !== 0 ? 'u-mt32' : '']" v-for="link in links" :key="link.id" @click="open = !open">
+                <a class="page__scroll" :href="link.href">{{ link.name }}</a>
+              </li>
+              <li class="gnav__item u-mt64" @click="open = !open">
+                <a class="gnav__instagram" href="" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+          </ul>
+        </nav>
+      </gnav>
+    </div>
+
+    <main>
+      <div class="kv">
+        <div class="kv__pattern"></div>
+        <video src="img/mv_top_kv.mp4" autoplay loop muted playsinline>
+      </div>
+            
+      <article class="menu" id="menu">
+        <div class="menu__body">
+          <h2 class="menu__title smoothIn">Menu</h2>
+          <ul class="menu__list">
+            <li class="menu__item smoothIn">
+              <span class="menu__name">カット</span>
+              <span class="menu__price">¥4,000〜</span>
+            </li>
+            <li class="menu__item u-mt16 smoothIn">
+              <span class="menu__name">シングルカラー</span>
+              <span class="menu__price">¥5,500〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">オーガニックカラー</span>
+              <span class="menu__price">¥6,000〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">ポイントカラー</span>
+              <span class="menu__price">¥3,000〜</span>
+            </li>
+            <li class="menu__item u-mt16 smoothIn">
+              <span class="menu__name">モイストパーマ</span>
+              <span class="menu__price">¥9,500〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">ポイントパーマ</span>
+              <span class="menu__price">¥3,000〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">ナチュラルストレート</span>
+              <span class="menu__price">¥10,000〜</span>
+            </li>
+            <li class="menu__item u-mt16 smoothIn">
+              <span class="menu__name">トリートメント</span>
+              <span class="menu__price">¥5,000〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">イオントリートメント</span>
+              <span class="menu__price">¥2,000〜</span>
+            </li>
+            <li class="menu__item u-mt16 smoothIn">
+              <span class="menu__name">ヘアセット</span>
+              <span class="menu__price">¥3,500〜</span>
+            </li>
+            <li class="menu__item smoothIn">
+              <span class="menu__name">シャンプーブロー</span>
+              <span class="menu__price">¥1,500〜</span>
+            </li>
+          </ul>
+        </div>
+        <div class="menu__img smoothIn smoothIn--left"><img src="img/bg-menu@2x.jpg" srcset="img/bg-menu.jpg 1x, img/bg-menu@2x.jpg 2x" alt="" decoding="async" loading="lazy"></div>
+      </article>
+
+      <article class="gallery" id="gallery">
+        <h2 class="gallery__title smoothIn">Gallery</h2>
+        <ul class="gallery__body smoothIn">
+          <transition-group name="galleryShow">
+            <li class="gallery__item" v-for="item in items" :key="item">
+              <a :href="item.href" @click.prevent="zoom">
+                <img :src="item.thumbnail" alt="">
+                <span class="gallery__hover"><i class="fas fa-search-plus"></i></span>
+              </a>
+            </li>
+          </transition-group>
+        </ul>
+        <transition name="modalShow">
+          <div class="modal__bg" v-show="show">
+            <div class="modal">
+              <img :src="src" alt="">
+              <div class="modal__close" @click="close">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </transition>
+        <div class="gallery__btnWrapper smoothIn">
+          <button class="gallery__btn btn btn--transparent" @click="load" v-if="hasNext"><span>View More</span></button>
+        </div>
+      </article>
+
+      <article class="reservation" id="reservation">
+        <h2 class="reservation__title smoothIn">Reservation</h2>
+        <div id="reserve-app">
+          <div class="smoothIn" v-show="reserveInit">
+            <p class="reservation__heading">1.　プランを選択してください</p>
+            <div class="plan__wrapper">
+              <select class="plan" v-model="plan">     
+                <option class="plan__default" value="">ご希望のプラン</option>
+                <option value="1H">カット</option>
+                <option value="2H">カラー</option>
+                <option value="2H">パーマ</option>
+                <option value="1H">トリートメント</option>
+                <option value="2H">カット＋トリートメント</option>
+                <option value="3H">カット＋カラー</option>
+                <option value="3H">カット＋パーマ</option>
+                <option value="1H">その他</option>
+              </select>
+            </div>
+          </div>
+          <div class="u-mt32 smoothIn" v-show="reserveInit">
+            <p class="reservation__heading">2.　日時を選択してください</p>
+            <table class="calendar">
+              <thead>
+                <tr>
+                  <th id="calendar__prev" @click="getPrevCalendar" :class="{ disabled: prevDisabled }" rowspan="2">&laquo;</th>
+                  <th id="calendar__title" colspan="7">{{ title }}</th>
+                  <th id="calendar__next" @click="getNextCalendar" :class="{ disabled: nextDisabled }" rowspan="2">&raquo;</th>
+                </tr>
+                <tr>
+                  <template  v-for="date in dates">
+                    <th class="calendar__date">
+                      <span>{{ date.dateNumber }}</span>
+                      <span>{{ date.day }}</span>
+                    </th>
+                  </template>
+                </tr>
+              </thead>
+              <tbody>
+                <template v-for="time in times">
+                  <tr>
+                    <td class="calendar__time">{{ time.hour }}:{{ String(time.min).padStart(2, '0') }}</td>
+                    <template v-for="date in dates">
+                      <td class="calendar__body">
+                        <input type="checkbox" id="reserve">
+                        <label for="reserve" v-if="date.status[time.key]" class="disabled" @click="reserve" :data-reservetime="`${time.hour}:${String(time.min).padStart(2, '0')}`" :data-year="date.year" :data-month="date.month" :data-datenumber="date.dateNumber" :data-daynumber="date.dayNumber" :data-timekey="time.key">×</label>
+                        <label for="reserve" v-else @click="reserve" :data-reservetime="`${time.hour}:${String(time.min).padStart(2, '0')}`" :data-year="date.year" :data-month="date.month" :data-datenumber="date.dateNumber" :data-daynumber="date.dayNumber" :data-timekey="time.key">◎</label>
+                      </td> 
+                    </template>
+                    <td class="calendar__time">{{ time.hour }}:{{ String(time.min).padStart(2, '0') }}</td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+            
+          <div class="reserveConfirm" v-show="reserveAction">
+            <p class="reserveConfirm__text">ご希望の日時は{{ addReserve.reserveYear }}年{{ addReserve.reserveMonth }}月{{ addReserve.reserveDate }}日{{ addReserve.reserveTime }}でよろしいですか？</p>
+            <div class="reserveConfirm__btnWrapper">
+              <button class="reserveConfirm__btn btn btn--grey" @click="cancel"><span>変更する</span></button>
+              <button class="reserveConfirm__btn btn btn--black" @click="getReserve"><span>予約する</span></button>
+            </div>
+          </div>
+
+          <form v-show="reserveForm">
+            <p class="reserveForm__text">
+              <span>ご予約日時：</span>
+              <span>{{ addReserve.reserveYear }}年{{ addReserve.reserveMonth }}月{{ addReserve.reserveDate }}日{{ addReserve.reserveTime }}〜</span>
+            </p>
+            <table class="reserveForm__body">
+              <tbody>
+                <tr>
+                  <th>お名前<span>（フルネーム）</span></th>
+                  <td>
+                    <input type="text" placeholder ="〇〇　〇〇" v-model="name"/>
+                    <span class="reserveForm__error"v-show="errorName">入力してください</span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th>電話番号<span>（ハイフンなし）</span></th>
+                  <td>
+                    <input type="tel" placeholder ="080××××××××" v-model="tel"/>
+                    <span class="reserveForm__error" v-show="errorTel">10〜11桁の半角数字で入力してください</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th>メールアドレス</th>
+                  <td>
+                    <input type="email" placeholder ="hello@example.com" v-model="email"/>
+                    <span class="reserveForm__error" v-show="errorEmail">正しく入力してください</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="reserveForm__btnWrapper">
+              <button class="reserveForm__btn btn btn--grey" @click="back"><span>戻る</span></button>
+              <button class="reserveForm__btn btn btn--transparent" type="button" @click="closing"><span>予約を確定する</span></button>
+            </div>
+          </form>
+          <transition name="reserveDone">
+          <div v-show="done">            
+            <p class="reserveDone"><span>ご予約を承りました。</span><span>ご来店をお待ちしております。</span></p>            
+          </div>
+        </transition>
+        </div>
+      </article>
+
+      <article class="shop" id="shop">
+        <h2 class="shop__title smoothIn">Shop</h2>
+        <div class="shop__body">
+          <div class="shop__text smoothIn">
+            <p class="shop__schedule">
+              <span>Open 10:00〜20:00</span>
+              <span>Close 毎週火曜日</span>
+            </p>
+            <p class="shop__address u-mt16">
+              <span>〒111-3333</span>
+              <span>東京都目黒区自由が丘1-1-111</span>
+              <span>TEL 03-1111-1111</span>
+              <span>Email info@erihair.com</span>
+            </p>
+          </div>
+          <iframe class="shop__map smoothIn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.656552445147!2d139.66890510055106!3d35.6115376413019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f4dffba66a89%3A0x4e2878e626fb939a!2z44CSMTUyLTAwMzUg5p2x5Lqs6YO955uu6buS5Yy66Ieq55Sx44GM5LiY77yR5LiB55uu77yR!5e0!3m2!1sja!2sjp!4v1651919196806!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__logo"><img src="img/logo_row_wh@2x.png" srcset="img/logo_row_wh.png 1x, img/logo_row_wh@2x.png 2x" alt="hair studio Land"></div>
+        <a class="footer__instagram" href="" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <small class="copyright">© hair studio eri</small>
+    </footer>
+
+    <!-- js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/dist/bundle.js" defer></script>   
+    
+  </body>
+</html>
