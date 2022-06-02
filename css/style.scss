@@ -49,10 +49,12 @@ btn
     transform-origin: right top;
   }
 
-  &:hover::before {
+  @include m.mq-pc {
+    &:hover::before {
       transform-origin: left top;
       transform: scale(1, 1);
     }
+  }
 
   &--black,
   &--grey {
@@ -69,8 +71,10 @@ btn
       color: v.$color-white;
     }
 
-    &:hover span {
-      color: v.$color-primary;
+    @include m.mq-pc {
+      &:hover span {
+        color: v.$color-primary;
+      }
     }
   }
 
@@ -118,21 +122,23 @@ btn
       left: 0;
     }
 
-    &:hover {
-      border-color: transparent;
-      transition-delay: 0.6s;
-
-      &::before {
-        transition-delay: 0.1s;
-      }
-
-      span {
-        color: v.$color-white;
-      }
-
-      span::before,
-      span::after {
-        width: 100%;
+    @include m.mq-pc {
+      &:hover {
+        border-color: transparent;
+        transition-delay: 0.6s;
+  
+        &::before {
+          transition-delay: 0.1s;
+        }
+  
+        span {
+          color: v.$color-white;
+        }
+  
+        span::before,
+        span::after {
+          width: 100%;
+        }
       }
     }
   }
@@ -263,12 +269,12 @@ gloval nav
   z-index: 2;
   width: 100%;
   height: 100vh;
-  padding-top: 11.2rem;
+  padding-top: 8.0rem;
   text-align: center;
   background-color: v.$color-primary;
   color: v.$color-white;
   opacity: 0;
-  transition: 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 
   &__item {
     font: {
@@ -779,8 +785,7 @@ reservation
   border-collapse: collapse;
 
   th,
-  td {
-    
+  td {   
     border: 1px solid v.$color-white;
     text-align: center;
   }

@@ -61,7 +61,7 @@
       <gnav>
         <nav class="gnav" :class="{show: open}">
           <ul class="gnav__list">
-              <li class="gnav__item" :class="[index !== 0 ? 'u-mt32' : '']" v-for="link in links" :key="link.id" @click="open = !open">
+              <li class="gnav__item" :class="[index !== 0 ? 'u-mt24' : '']" v-for="link in links" :key="link.id" @click="open = !open">
                 <a class="page__scroll" :href="link.href">{{ link.name }}</a>
               </li>
               <li class="gnav__item u-mt64" @click="open = !open">
